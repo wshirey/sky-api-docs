@@ -1,0 +1,447 @@
+<!DOCTYPE html>
+
+  <html lang="en" class="">
+    <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <title>Blackbaud SKY API Developer Portal | Add-in single-sign-on (SSO)</title>
+      <link rel="icon" href="/img/favicon.ico" type="image/ico">
+
+      
+        <link rel="stylesheet" href="https://sky.blackbaudcdn.net/skyux/1.16.0-4/css/sky-bundle.css">
+<link rel="stylesheet" href="/css/app.css">
+      
+      
+
+      
+        <link rel="stylesheet" href="/assets/css/custom.css">
+      
+        <link rel="stylesheet" href="/assets/css/entity-reference.css">
+      
+
+      
+
+
+      <!--[if lt IE 9]>
+        <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+        <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+      <![endif]-->
+
+      
+        <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-2418840-1', 'auto');
+  ga('send', 'pageview');
+</script>
+      
+
+    </head>
+    <body data-base="/" class="bb-omnibar-height-padding ">
+
+      
+        <noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-W56QP9"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-W56QP9');</script>
+      
+
+      <div id="top"></div>
+
+      
+        
+
+          <div id="ng-stache" ng-controller="NavController"  class="bb-navbar">
+            <bb-navbar>
+              <div class="container">
+                <div class="row">
+                  <div class="col-sm-12">
+                    <ul class="nav navbar-nav navbar-left">
+  <li>
+    <a href="https://developer.sky.blackbaud.com/">
+      Home
+    </a>
+  </li>
+  <li class="dropdown">
+    <a href="/docs/getting-started/" class="dropdown-toggle">
+      Documentation
+      <span class="caret"></span>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="/docs/getting-started/">Getting Started</a>
+      </li>
+      <li>
+        <a href="/docs/createapp/">Applications</a>
+      </li>
+      <li>
+        <a href="/docs/addins/">Add-ins</a>
+      </li>
+      <li>
+        <a href="/docs/authorization/">Authorization</a>
+      </li>
+      <li>
+        <a href="/docs/basics/">Basics</a>
+      </li>
+      <li>
+       <a href="/docs/code/">Code Samples</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a href="https://developer.sky.blackbaud.com/docs/services/" class="dropdown-toggle">
+      API
+      <span class="caret"></span>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="https://developer.sky.blackbaud.com/docs/services/">Endpoint Reference</a>
+      </li>
+      <li>
+        <a href="/api/entity-reference/">Entity Reference</a>
+      </li>
+      <li>
+        <a href="https://developer.sky.blackbaud.com/products/">Products</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a href="https://developer.sky.blackbaud.com/developer/" class="dropdown-toggle">
+      Developer Account
+      <span class="caret"></span>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <a href="https://developer.sky.blackbaud.com/developer/">My Profile</a>
+      </li>
+      <li>
+        <a href="https://developer.blackbaud.com/apps">My Applications</a>
+      </li>
+      <li>
+        <a href="https://developer.sky.blackbaud.com/developer/analytics/">Analytics</a>
+      </li>
+    </ul>
+  </li>
+  <li class="dropdown">
+    <a href="/support/changelog/" class="dropdown-toggle">
+      Support
+      <span class="caret"></span>
+    </a>
+    <ul class="dropdown-menu">
+       <li>
+        <a href="https://community.blackbaud.com/developer">Community</a>
+      </li>
+      <li>
+        <a href="/support/changelog/">Changelog</a>
+      </li>
+       <li>
+        <a href="/support/issues/">Issues</a>
+      </li>
+      <li>
+        <a href="/support/ideas/">Ideas</a>
+      </li>
+      <li>
+        <a href="/support/faq/">FAQ</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    <a href="https://skyapi.statuspage.io">Status</a>
+  </li>
+</ul>
+                    
+                    
+                  </div>
+                </div>
+              </div>
+            </bb-navbar>
+          </div>
+
+        
+      
+
+      
+
+      
+      
+
+      
+        
+          
+
+<div class="content">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-12">
+        
+          
+
+<div class="row">
+  <div class="col-sm-3 content-secondary">
+    <div class="sidebar">
+      <ul class="nav nav-stacked nav-sidebar"><li class=""><a href="/docs/getting-started/">Getting Started</a></li><li class=""><a href="/docs/createapp/">Applications</a></li><li class="current active"><a href="/docs/addins/">Add-ins</a><ul class="nav"><li class=""><a href="/docs/addins/overview/">Overview</a></li><li class=""><a href="/docs/addins/get-started/">Get started</a></li><li class="current active"><a href="/docs/addins/concepts/">Concepts</a><ul class="nav"><li class=""><a href="/docs/addins/concepts/extension-points/">Extension points</a></li><li class=""><a href="/docs/addins/concepts/capabilities/">Add-in capabilities</a></li><li class="current active"><a href="/docs/addins/concepts/addin-sso/">Add-in single-sign-on (SSO)</a></li><li class=""><a href="/docs/addins/concepts/connecting-to-skyapi/">Connecting to SKY API</a></li></ul></li><li class=""><a href="/docs/addins/how-to-guides/">How-to guides</a></li><li class=""><a href="/docs/addins/reference/">Reference</a></li><li class=""><a href="/docs/addins/common-issues/">Common issues with add-ins</a></li></ul></li><li class=""><a href="/docs/authorization/">Authorization</a></li><li class=""><a href="/docs/basics/">Basics</a></li><li class=""><a href="/docs/code/">Code Samples</a></li><li class="visible-on-affix"><a href="#top" class="smooth-scroll"></a></li></ul>
+    </div>
+  </div>
+  <div class="col-sm-9 content-primary">
+    
+      
+<!-- STACHE MARKED -->
+<div class="pull-right partial-edit-header">
+    <a href="https://github.com/blackbaud/sky-api-docs/blob/master/content/docs/addins/concepts/addin-sso/index.md" target="_blank" class="edit-link btn btn-primary" rel="noopener noreferrer">
+        <i class="fa fa-pencil"></i> Edit in GitHub
+    </a>
+</div>
+
+<h1 id="add-in-single-sign-on-sso-">Add-in single-sign-on (SSO)</h1>
+<p>SKY add-ins support a single-sign-on (SSO) mechanism that can be used to correlate the current Blackbaud user with a user in the add-in&apos;s native system.</p>
+<p>Within the <a href="https://github.com/blackbaud/sky-addin-client" target="_new">Add-in Client JavaScript library</a>, the <code>AddinClient</code> class provides a <code>getAuthtoken</code> function for getting a short-lived &quot;user identity token&quot; from the host application. This token is a signed value that is issued to the SKY API application and represents the Blackbaud user&apos;s identity.</p>
+<p>The general flow is that when an add-in is initiated, it can request a user identity token from the host page using the <code>getAuthtoken</code> function.  The host will in turn request a user identity token from the SKY API OAuth 2.0 service.  The user identity token (a <a href="https://jwt.io">JWT</a>), will be addressed to the SKY API application and will contain the Blackbaud user&apos;s unique identifier.  The OAuth service will return the token to the host, and the host will pass the token to the add-in.  The add-in can then pass the user identity token (along with the environment ID provided as part of the initial context when the add-in is instantiated) to its own backend, where it can be validated and used to look up a user in the add-in&apos;s native system.  If a user mapping exists, then the add-in can consider the user logged in and immediately display content to the user.  If no user mapping exists, the add-in can prompt the user to login to the add-in&apos;s native system.  Once the user&apos;s identity in the native system is known, the add-in can persist the user mapping so that on subsequent loads the user doesn&apos;t have to log in again (even across devices).</p>
+<p>Note that the user identity token is signed by the SKY API OAuth 2.0 service, but it cannot be used to make calls to the SKY API. It is purely used to convey the user&apos;s identity to the add-in.  In order to make SKY API calls, a proper SKY API access token must be obtained.</p>
+<p>This flow is illustrated below:</p>
+<p><img style="border:none" src="/assets/img/add-in-sso.png" alt="Add-in SSO flow diagram" class="img-responsive"></p>
+<p>Add-ins can make the following request upon initialization to obtain a user identity token (typically handled within the <code>init</code> callback):</p>
+<pre><code class="language-js">var client = new AddinClient({...});
+client.getAuthToken().then((token) =&gt; {
+  var userIdentityToken = token;
+  . . .
+});
+</code></pre>
+<p>The following string represents a sample user identity token returned by the <code>getAuthToken</code> function:</p>
+<p style="padding: 0 20px; word-wrap: break-word">
+eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsIng1dCI6IjREVjZzVkxIM0FtU1JTbUZqMk04Wm5wWHU3WSJ9.eyJuYW1laWQiOiIxMjM0ZjVjNC1iOGRhLTQxYWQtYjAzMy1hMGU5ZWY3ZGI3OTkiLCJpc3MiOiJodHRwczovL29hdXRoMi5za3kuYmxhY2tiYXVkLmNvbS8iLCJhdWQiOiJiOWEwMmE0OS0wNGNiLTRiOWMtYTkwYy1kMjYyODcxYjU0N2QiLCJleHAiOjE1MjE1NzUxNTAsIm5iZiI6MTUyMTU3NDg1MH0.Cfy4VkLUyP_tvvo8UqswiYtOdQ3Tlj0CJLgoW-up4Ns9p4R4qKBv8kJJ8WPRTKFlVNTuBWdMrQ1I07oSuiQ
+</p>
+
+<p>Here&apos;s a decoded version of the above user identity token:</p>
+<pre><code class="language-js">{
+  &quot;nameid&quot;: &quot;1234f5c4-b8da-41ad-b033-a0e9ef7db799&quot;,
+  &quot;iss&quot;: &quot;https://oauth2.sky.blackbaud.com/&quot;,
+  &quot;aud&quot;: &quot;b9a02a49-04cb-4b9c-a90c-d262871b547d&quot;,
+  &quot;exp&quot;: 1521575150,
+  &quot;nbf&quot;: 1521574850
+}
+</code></pre>
+<p>Notice that the <code>aud</code> claim indicates the intended audience (the SKY API application that owns the add-in), and the <code>nameid</code> claim contains the user&apos;s Blackbaud ID.</p>
+<h3 id="validating-the-user-identity-token-uit-">Validating the user identity token (UIT)</h3>
+<p>Before looking for a user mapping, add-in developers should first validate the signature of the UIT against the OpenIDConnect endpoint within SKY API OAuth 2.0 service.  This prevents certain types of attack vectors and provides a mechanism for the add-in to securely convey the Blackbaud user&apos;s identity to its own backend.  </p>
+<p>The SKY API OpenIDConnect configuration can be found at:</p>
+<p> <a href="https://oauth2.sky.blackbaud.com/.well-known/openid-configuration" target="_new"><i class="fa fa-globe" aria-hidden="true"></i>    https://oauth2.sky.blackbaud.com/.well-known/openid-configuration</a>.</p>
+<p>Developers building add-ins in .NET can make use of a Blackbaud-provided library to assist with validating the user identity token.  This library is distributed as a NuGet package named <a href="https://www.nuget.org/packages/Blackbaud.Addin.TokenAuthentication" target="_new"><i class="fa fa-globe" aria-hidden="true"></i> Blackbaud.Addin.TokenAuthentication</a>.</p>
+<p>More information on how to use this library can be found in the readme.txt:</p>
+<h4 id="sample">Sample</h4>
+<p>The follow sample demonstrates code that validates the raw token value obtained from the host application using the Blackbaud.Addin.TokenAuthentication library:</p>
+<pre><code class="language-csharp">// this represents the user identity token returned from getAuthToken()
+var rawToken = &quot;(raw token value)&quot;;
+
+// this is the ID of the developer&apos;s SKY API application
+var applicationId = &quot;(some application ID)&quot;;
+
+// create and validate the user identity token
+UserIdentityToken uit;
+try
+{
+    uit = await UserIdentityToken.ParseAsync(rawToken, applicationId);
+
+    // if valid, the UserId property contains the Blackbaud user&apos;s ID
+    var userId = uit.UserId;
+}
+catch (TokenValidationException ex)
+{
+    // process the exception
+}
+</code></pre>
+<p>Once the token has been validated, the add-in&apos;s backend will know the Blackbaud user ID and can determine if a user mapping exists for a user in the add-in&apos;s native system.  If a mapping exists, then the add-in&apos;s backend can immediately present the content for the add-in.  If no user mapping exists, the add-in can prompt the user to login.</p>
+<h3 id="correlating-blackbaud-users-with-external-systems">Correlating Blackbaud users with external systems</h3>
+<p>For proper correlation with external systems, it is important to understand how Blackbaud models our customer base.  The following list describes several concepts within the data model:</p>
+<ul>
+<li>Legal entity - We use the term <code>legal entity</code> to represent a top-level customer record in the system.  This could be a specific non-profit organization, an individual change agent, or even a Partner ISV.</li>
+<li>Environment - An <code>environment</code> is a logical grouping of products and services that are available to a <code>legal entity</code>.  You can think of an environment as a container of various Blackbaud products and services - it is the unifying construct that faciltiates the inter-communication between those products and services.  A legal entity will typically have at least one environment, but some legal entities may have multiple environments used to serve various purposes (like testing, staging, production, regional chapters, etc.).</li>
+<li>User - The term <code>user</code> refers to a specific Blackbaud ID user account.</li>
+</ul>
+<p>Within this data model, a single Blackbaud user can have access to multiple environments and potentially access to environments across multiple organizations.  Therefore, it is important to properly consider both <code>User</code> <em>and</em> <code>Environment</code> when establishing a link with an external system.  At runtime, the environment ID will be provided as part of the <code>args</code> object, and your add-in can request a user identity token using the <code>getAuthToken</code> method of the <code>AddinClient</code> class.   </p>
+<p>Note that details about the legal entity, environment, and user are returned as part of the <code>/token</code> endpoint response when obtaining SKY API access token.  For more information, see step 5 of the <a href="/docs/authorization/auth-code-flow/#step-5--tokens-returned">Authorization Code Flow</a> documentation, or step 3 of the <a href="/docs/authorization/implicit-flow/#step-3--access-token-provided">Implicit Flow</a> documentation.</p>
+<p><bb-alert bb-alert-type="warning">
+<strong>Important!</strong> Be sure to properly account for these concepts when presenting related data from your system.</bb-alert></p>
+
+    
+  </div>
+</div>
+
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+        
+      
+
+      
+
+      
+        <div class="back-to-top" data-offset="220">
+  <i class="fa fa-angle-double-up"></i>
+</div>
+      
+
+      <div class="affix-stop">
+        
+
+        
+          
+
+            <div class="footer-site">
+              <div class="container">
+                <div class="row">
+                  <div class="col-xs-6 col-sm-4">
+                    <h3>
+  <a href="https://developer.sky.blackbaud.com/">
+    SKY API
+  </a>
+</h3>
+                    <ul class="nav navbar-nav navbar-left">
+  <li>
+    <a href="https://developer.sky.blackbaud.com/">
+      Home
+    </a>
+  </li>
+  <li class="dropdown">
+    <a href="/docs/getting-started/">
+      Documentation
+      <span class="caret"></span>
+    </a>
+  </li>
+  <li class="dropdown">
+    <a href="https://developer.sky.blackbaud.com/docs/services/">
+      API
+      <span class="caret"></span>
+    </a>
+  </li>
+  <li class="dropdown">
+    <a href="https://developer.sky.blackbaud.com/developer/">
+      Developer Account
+      <span class="caret"></span>
+    </a>
+  </li>
+  <li class="dropdown">
+    <a href="/support/changelog/">
+      Support
+      <span class="caret"></span>
+    </a>
+  </li>
+  <li class="terms">
+    <a href="https://developer.sky.blackbaud.com/terms">
+      API Terms of Use
+    </a>
+  </li>
+</ul>
+                  </div>
+                  <div class="col-xs-6 col-sm-4 col-sm-push-4">
+                    <ul class="list-inline social-icons">
+  <li>
+    <a href="http://twitter.com/blackbaud" target="_blank">
+      <i class="fa fa-twitter"></i>
+    </a>
+  </li>
+  <li>
+    <a href="https://www.facebook.com/blackbaud" target="_blank">
+      <i class="fa fa-facebook"></i>
+    </a>
+  </li>
+  <li>
+    <a href="http://www.youtube.com/user/blackbaudinc" target="_blank">
+      <i class="fa fa-youtube"></i>
+    </a>
+  </li>
+</ul>
+                  </div>
+                  <div class="clearfix visible-xs-block"></div>
+                  <div class="col-sm-4 col-sm-pull-4">
+                    
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          
+        
+
+        
+          
+            <div class="copyright">
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-6">
+                <p>&copy; 2016 Blackbaud, Inc. All rights reserved.</p>
+            </div>
+        </div>
+    </div>
+</div>
+          
+        
+      </div>
+
+      
+        <bb-omnibar></bb-omnibar>
+<bb-omnibar-search-results></bb-omnibar-search-results>
+      
+
+      
+        <script src="https://sky.blackbaudcdn.net/skyux/1.16.0-4/js/sky-bundle.min.js"></script>
+      
+
+      
+
+      <script src="/js/stache.min.js"></script>
+
+      
+        
+      
+        
+      
+        
+      
+        
+      
+
+      
+        
+          <script src="/assets/js/scrollreveal.js"></script>
+        
+      
+        
+          <script src="/assets/js/custom.js"></script>
+        
+      
+        
+          <script src="/assets/js/angular-local-storage.min.js"></script>
+        
+      
+        
+          <script src="/assets/js/entity-reference/app.1.2.js"></script>
+        
+      
+
+      
+
+      
+
+      
+        
+          <script>
+            !function(e,a){"use strict";function n(){var e={};try{e.omnibar={enableHelp:!1,enableSearch:!0,serviceName:"SKY API",serviceNameLink:"https://developer.sky.blackbaud.com/",enableServiceNameLink:!0,url:"https://signin.blackbaud.com/omnibar.min.js",urlDev:"https://signin.blackbaud.com/omnibar.min.js",delegationUri:"https://developer.sky.blackbaud.com/signin/"},e.omnibarSearch={resultsBaseUri:"",resourceUrl:"/content.json",resultsTemplateUri:"/assets/vendor/bb-omnibar-search/templates/bb-omnibar-search.hbs",searchFormClass:"searchenabled",searchFormClassDev:"bb-omnibar-searchenabled",searchInputId:"omnibar_searchbox",searchResultsId:"bb-omnibar-search-results"}}catch(e){}return e}function r(e,a){e.$on("bbBeginWait",function(e,n){e.stopPropagation(),a.beginPageWait(n)}),e.$on("bbEndWait",function(e,n){e.stopPropagation(),a.endPageWait(n)})}r.$inject=["$rootScope","bbWait"],a.module("stache").constant("stacheConfig",n.call()).run(r),a.element(document).ready(function(){a.bootstrap(document,["stache"])})}(window,window.angular);
+          </script>
+        
+      
+
+      
+
+    </body>
+  </html>
+
